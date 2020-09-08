@@ -1,0 +1,41 @@
+# ZSH configuration
+#  curl -sL --proto-redir -all,https
+#  https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+source ~/.zplug/init.zsh
+
+# prompt
+zplug "dracula/zsh", as:theme
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "plugins/tmux", from:oh-my-zsh
+
+# git
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/github", from:oh-my-zsh
+zplug "plugins/git-prompt", from:oh-my-zsh
+
+# history 
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=5000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+
+# aliases
+zplug "plugins/common-aliases", from:oh-my-zsh
+
+# load plugins
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
