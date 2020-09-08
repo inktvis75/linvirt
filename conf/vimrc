@@ -1,7 +1,7 @@
 execute pathogen#infect()
 
 " look and feel
-colorscheme evening
+colorscheme desert
 syntax on
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
