@@ -1,0 +1,29 @@
+execute pathogen#infect()
+
+" look and feel
+colorscheme evening
+syntax on
+highlight Pmenu guibg=white guifg=black gui=bold
+highlight Comment gui=bold
+highlight Normal gui=none
+set ruler laststatus=2 showcmd showmode
+set number
+set cursorline
+set title
+
+" indent & wrap
+filetype plugin indent on
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
+set wrap breakindent linebreak list
+set formatoptions=l
+set textwidth=80
+
+" indent yml
+autocmd FileType yaml setlocal ai ts=2 sw=2 et nu
+
+" mkdir -p ~/.vim/autoload ~/.vim/bundle &&  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+"
+" cd ~/.vim/bundle
+" git clone https://github.com/chase/vim-ansible-yaml
+" git clone https://github.com/lepture/vim-jinja
+" git clone https://github.com/Yggdroot/indentLine
