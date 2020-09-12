@@ -21,6 +21,8 @@ set textwidth=80
 " indent yml
 autocmd FileType yaml setlocal ai ts=2 sw=2 et nu
 
+" Execute the following commands in a shell:
+"
 " mkdir -p ~/.vim/autoload ~/.vim/bundle &&  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 "
 " cd ~/.vim/bundle
