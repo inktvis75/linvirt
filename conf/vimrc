@@ -14,6 +14,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'noah/vim256-color'
 Plug 'gu-fan/riv.vim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Look and Feel
@@ -30,6 +31,18 @@ set expandtab
 set smarttab 
 set textwidth=80
 set nowrap
+
+" Indent Plugin
+let g:indentLine_char = '⦙'
+
+" ALE Plugin
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
+
+" YAML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Backspace behaviour
 set backspace=indent,eol,start
