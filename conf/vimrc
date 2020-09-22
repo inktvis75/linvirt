@@ -1,36 +1,35 @@
-execute pathogen#infect()
+" Execute the following line in a shell:
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" Use :PlugInstall after adding plugins
 
-" look and feel
-colorscheme desert
+call plug#begin('~/.vim/plugged')
+Plug 'chase/vim-ansible-yaml'
+Plug 'lepture/vim-jinja'
+Plug 'Yggdroot/indentLine'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'andrewstuart/vim-kubernetes'
+Plug 'elzr/vim-json'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'noah/vim256-color'
+Plug 'gu-fan/riv.vim'
+call plug#end()
+
+" Look and Feel
+colorscheme atom-dark
 syntax on
-highlight Pmenu guibg=white guifg=black gui=bold
-highlight Comment gui=bold
-highlight Normal gui=none
-set ruler laststatus=2 showcmd showmode
 set number
 set cursorline
-set title
-
-" indent & wrap
-filetype plugin indent on
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
-set wrap breakindent linebreak list
-set formatoptions=l
+set ruler
+set laststatus=2
+set tabstop=4 
+set softtabstop=4 
+set shiftwidth=4 
+set expandtab 
+set smarttab 
 set textwidth=80
+set nowrap
 
-" indent yml
-autocmd FileType yaml setlocal ai ts=2 sw=2 et nu
-
-" Execute the following commands in a shell:
-"
-" mkdir -p ~/.vim/autoload ~/.vim/bundle &&  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-"
-" cd ~/.vim/bundle
-" git clone https://github.com/chase/vim-ansible-yaml
-" git clone https://github.com/lepture/vim-jinja
-" git clone https://github.com/Yggdroot/indentLine
-" git clone https://github.com/ekalinin/Dockerfile.vim.git
-" git clone https://github.com/andrewstuart/vim-kubernetes.git
-" git clone https://github.com/elzr/vim-json.git
-" git clone https://github.com/preservim/nerdcommenter.git
-" git clone https://github.com/preservim/nerdtree.git
+" Backspace behaviour
+set backspace=indent,eol,start
