@@ -4,13 +4,20 @@
 
 source ~/.zplug/init.zsh
 
+# path
+export PATH=$PATH:$HOME/Library/Python/3.8/bin
+
 # prompt
+zplug "woefe/vi-mode.zsh"
+zplug "woefe/wbase.zsh"
 zplug "dracula/zsh", as:theme
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "plugins/tmux", from:oh-my-zsh
+zplug "b4b4r07/zsh-vimode-visual", defer:2
+zplug "b4b4r07/zsh-vimode-visual", defer:3
 
 # git
 zplug "plugins/git", from:oh-my-zsh
@@ -26,6 +33,16 @@ setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
 
+# behaviour
+setopt autocd
+setopt nonomatch
+setopt numericglobsort
+setopt promptsubst
+autoload -Uz compinit
+compinit -d ~/.cache/zcompdump
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # aliases
 zplug "plugins/common-aliases", from:oh-my-zsh
 
@@ -38,4 +55,5 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
 
