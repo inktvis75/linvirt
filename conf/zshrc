@@ -1,59 +1,34 @@
-# ZSH configuration
-#  curl -sL --proto-redir -all,https
-#  https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# Antigen, make sure git is installed and execute:
+# curl -L git.io/antigen > ~/antigen.zsh
 
-source ~/.zplug/init.zsh
+source ~/.antigen.zsh
+antigen use oh-my-zsh
+antigen bundle woefe/vi-mode.zsh
+antigen bundle woefe/wbase.zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle git
+antigen bundle git-hub
+antigen bundle git-prompt
+antigen theme bira
+antigen apply
 
-# path
-export PATH=$PATH:$HOME/Library/Python/3.8/bin
-
-# prompt
-zplug "woefe/vi-mode.zsh"
-zplug "woefe/wbase.zsh"
-zplug "dracula/zsh", as:theme
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "b4b4r07/zsh-vimode-visual", defer:2
-zplug "b4b4r07/zsh-vimode-visual", defer:3
-
-# git
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/github", from:oh-my-zsh
-zplug "plugins/git-prompt", from:oh-my-zsh
-
-# history 
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=5000
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt incappendhistory
-
-# behaviour
+# General Options
 setopt autocd
 setopt nonomatch
+setopt notify
 setopt numericglobsort
 setopt promptsubst
-autoload -Uz compinit
-compinit -d ~/.cache/zcompdump
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-# aliases
-zplug "plugins/common-aliases", from:oh-my-zsh
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=2000
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
 
-# load plugins
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load
-
-
+# Variables
+export EDITOR=/usr/bin/vim
