@@ -1,7 +1,7 @@
 # Antigen, make sure git is installed and execute:
 # curl -L git.io/antigen > ~/antigen.zsh
 
-source ~/.antigen.zsh
+source ~/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle woefe/vi-mode.zsh
 antigen bundle woefe/wbase.zsh
