@@ -1,3 +1,4 @@
+" Make sure git and yamllint are installed
 " Execute the following line in a shell:
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
