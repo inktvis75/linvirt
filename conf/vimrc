@@ -23,6 +23,7 @@ call plug#end()
 
 " Look and Feel
 colorscheme atom-dark
+highlight CursorLine ctermbg=8
 syntax on
 set number
 set cursorline
