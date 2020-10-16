@@ -4,21 +4,19 @@
       "command": "bash-language-server",
       "args": ["start"],
       "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    }
-  },
-
-"languageserver": {
+    },
     "yaml": {
         "command": "yaml-language-server",
         "args": ["start", "--stdio"],
-        "filetypes": ["yml","yaml"],
-        "ignoreRootPaths": ["~"]
+        "filetypes": ["yaml"],
     }
   },
 
+"yaml.format.enable": true,
+"yaml.format.singleQuote": true,
+"yaml.trace.server": "verbose",
 "yaml.schemas": {
       "kubernetes": "/*.yaml",
-      "ansible": "/*.yml"
+      "https://json.schemastore.org/ansible-playbook": "/*.yml"
   }
 }
