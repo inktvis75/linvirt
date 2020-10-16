@@ -1,0 +1,24 @@
+{
+"languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  },
+
+"languageserver": {
+    "yaml": {
+        "command": "yaml-language-server",
+        "args": ["start", "--stdio"],
+        "filetypes": ["yml","yaml"],
+        "ignoreRootPaths": ["~"]
+    }
+  },
+
+"yaml.schemas": {
+      "kubernetes": "/*.yaml",
+      "ansible": "/*.yml"
+  }
+}
