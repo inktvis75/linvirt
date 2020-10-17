@@ -6,21 +6,22 @@ let g:python3_host_prog = "/usr/local/bin/python3"
 
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'neoclide/coc.nvim'
-Plug 'morhetz/gruvbox'
-Plug 'noah/vim256-color'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'noah/vim256-color'
+Plug 'axelf4/vim-strip-trailing-whitespace'
 call plug#end()
 
 set number
 set cursorline
 set ruler
 set laststatus=2
-set tabstop=4 
-set softtabstop=4 
-set shiftwidth=4 
-set expandtab 
-set smarttab 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
 set textwidth=80
 set nowrap
 set hlsearch
@@ -42,4 +43,10 @@ set cmdheight=2
 
 colorscheme gruvbox
 set background=light
+
+" Airline Configuration
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='gruvbox'
+
 
